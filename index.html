@@ -30,7 +30,9 @@
             </div>
             <div class="flex gap-8 text-sm font-light">
                 <button onclick="showPage('home')" class="hover:text-amber-400 transition" id="nav-home">Home</button>
-                <button onclick="showPage('destinations')" class="hover:text-amber-400 transition">Destinations</button>
+                <button onclick="showPage('travel-deals')" class="hover:text-amber-400 transition">Travel Deals</button>
+                <button onclick="showPage('excursions')" class="hover:text-amber-400 transition">Excursions</button>
+                <button onclick="showPage('contact')" class="hover:text-amber-400 transition">Contact</button>
                 <button onclick="showPage('booking')" class="hover:text-amber-400 transition">Booking</button>
             </div>
             <div class="text-sm text-amber-400 font-light" id="liveTime">00:00:00</div>
@@ -1185,6 +1187,285 @@
                 </div>
             </section>
         </div>
+
+        <!-- TRAVEL DEALS PAGE -->
+        <div id="page-travel-deals" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Travel Deals</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-2">Discover hand-picked holiday deals to some of the world's most incredible destinations</p>
+                    <p class="text-slate-400">From luxury beach escapes to city breaks and adventure holidays - find your perfect getaway</p>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="serif text-3xl font-bold mb-8">Featured Travel Deals</h2>
+                    <p class="text-slate-300 mb-8">Explore some of our latest and most popular travel offers. These exclusive deals are updated regularly to help you find incredible holidays at incredible value.</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-amber-400 transition">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/signiture-holiday-scaled.jpg" alt="Hevara Signature" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-2">Hevara Signature</h3>
+                                <p class="text-slate-300 mb-4">Experience our finest luxury escapes, handpicked for exceptional comfort, stunning destinations and truly unforgettable travel experiences</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300">Learn More →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-amber-400 transition">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/limited-time-deals-scaled.jpg" alt="Exclusive Offers" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-2">Exclusive Offers</h3>
+                                <p class="text-slate-300 mb-4">Discover our best value escapes with exclusive limited time offers on perfect holidays in stunning destinations</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300">Learn More →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-amber-400 transition">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/adventure-travel-scaled.jpg" alt="The Adventurer" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-2">The Adventurer</h3>
+                                <p class="text-slate-300 mb-4">Explore breath-taking landscapes, hidden gems and special journeys, designed for those who crave adventure and discovery</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300">Learn More →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-amber-400 transition">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/thrill-seekers-scaled.jpg" alt="Thrill Seekers" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-2">Thrill Seekers</h3>
+                                <p class="text-slate-300 mb-4">For those chasing adrenaline, discover high energy escapes packed with excitement, adventure and incredible experiences</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300">Learn More →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-amber-400 transition">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/chill-time.jpg" alt="Ocean Escapes" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-2">Ocean Escapes</h3>
+                                <p class="text-slate-300 mb-4">Unwind at sea with relaxing cruise escapes, stunning ocean views and effortless luxury from start to finish</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300">Learn More →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-amber-400 transition">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/handpicked-destinations-scaled.jpg" alt="Hevara Handpicked" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-2">Hevara Handpicked</h3>
+                                <p class="text-slate-300 mb-4">Carefully selected escapes chosen for their beauty, quality and experiences, tailored to inspire your perfect getaway</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300">Learn More →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="serif text-3xl font-bold mb-8">Family Favourites</h2>
+                    <p class="text-slate-300 mb-8">Looking for more? Discover unforgettable family experiences designed to create magical moments for all ages</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/arctic-family-adventure-scaled.jpg" alt="Arctic Adventure" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-xl font-bold mb-2">Arctic Family Adventure</h3>
+                                <p class="text-sm text-slate-400">Step into a magical Lapland wonderland where families meet Santa, ride husky sleds and chase the Northern Lights</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/theme-park-thrill.jpg-scaled.jpg" alt="Theme Park" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-xl font-bold mb-2">Theme Park Thrill</h3>
+                                <p class="text-sm text-slate-400">Experience nonstop excitement with thrilling rides, magical attractions and unforgettable moments for the whole family</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/Splash-slide-escape-scaled.jpg" alt="Waterpark" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-xl font-bold mb-2">Splash & Slide Escape</h3>
+                                <p class="text-sm text-slate-400">Dive into crystal-clear pools, race down thrilling slides and soak up the sunshine for the perfect family getaway</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-400/20 border border-amber-400/50 rounded-lg p-8 text-center">
+                    <h2 class="serif text-3xl font-bold mb-4">Ready to Book Your Dream Holiday?</h2>
+                    <p class="text-slate-300 mb-6">Let our travel specialists help you find the perfect deal for your next escape</p>
+                    <button onclick="showPage('booking')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition">
+                        Book Now
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- EXCURSIONS PAGE -->
+        <div id="page-excursions" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Excursions</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-2">Enhance your journey with curated excursions</p>
+                    <p class="text-slate-400">Designed to create unforgettable moments wherever you travel</p>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="serif text-3xl font-bold mb-4">Unforgettable Experiences</h2>
+                    <p class="text-slate-300 mb-8">Discover a world of unforgettable experiences with our carefully curated excursions across multiple destinations. From adrenaline-fueled adventures to scenic explorations, we offer something for every traveller.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/Quad-bike-dune-1024x683.jpg" alt="Quad Biking" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Quad Biking</h3>
+                                <p class="text-slate-300">Charge across endless deserts, rugged mountains and wild landscapes on a powerful quad bike. Feel the adrenaline and experience off-road freedom in breath-taking destinations.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/sky-dive-beach-1024x768.jpg" alt="Skydiving" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Sky Dive</h3>
+                                <p class="text-slate-300">Step into the sky and freefall above crystal-clear oceans, iconic cities and unforgettable landscapes. This heart-racing, once-in-a-lifetime experience delivers pure adrenaline.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/snow-moible-1024x576.jpg" alt="Snowmobile" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Snow Mobile</h3>
+                                <p class="text-slate-300">Race through snow-covered forests, frozen lakes and untouched winter wonderlands. This high-speed adventure combines raw adrenaline with magical scenery.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/hot-air-ballon-1024x683.jpg" alt="Hot Air Balloon" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Hot Air Balloon</h3>
+                                <p class="text-slate-300">Drift effortlessly above stunning landscapes as the world awakes beneath you. From golden sunrises to dreamlike views, this peaceful journey offers a perspective so beautiful it feels unreal.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/Helicopter-experience-1024x683.jpg" alt="Helicopter" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Helicopter Ride</h3>
+                                <p class="text-slate-300">Soar above breathtaking coastlines, iconic skylines, and world-famous landmarks. Enjoy stunning panoramic views and a once-in-a-lifetime luxury adventure.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/River-cruise-1024x680.jpg" alt="River Cruise" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">River Cruise</h3>
+                                <p class="text-slate-300">Sail through spectacular waterways, vibrant cities, and breathtaking scenery while enjoying a relaxing and elegant experience designed to create unforgettable memories.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/Guided-city-1024x683.jpg" alt="City Tours" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Guided City Tours</h3>
+                                <p class="text-slate-300">Discover iconic landmarks, hidden gems, and rich local culture with expert-guided tours designed to immerse you in the world's most beautiful cities.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/Island-hopping-1024x576.jpg" alt="Island Tours" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Private Island Tours</h3>
+                                <p class="text-slate-300">Escape to crystal-clear waters, hidden beaches, and breathtaking tropical scenery on an exclusive private island experience designed for pure relaxation and luxury.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/Wild-safari-1024x684.jpg" alt="Safari" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Safari Tours</h3>
+                                <p class="text-slate-300">Experience extraordinary wildlife, breathtaking landscapes, and unforgettable sunset game drives on a once-in-a-lifetime safari adventure.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                            <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/05/luxury-train-1024x682.jpg" alt="Luxury Train" class="w-full h-64 object-cover" />
+                            <div class="p-6">
+                                <h3 class="serif text-2xl font-bold mb-3">Luxury Train Journeys</h3>
+                                <p class="text-slate-300">Travel through breath-taking landscapes aboard luxurious trains offering world-class comfort, panoramic views, and unforgettable journeys that transform travel into an experience.</p>
+                                <button onclick="showPage('booking')" class="text-amber-400 hover:text-amber-300 mt-4">Book Now →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-400/20 border border-amber-400/50 rounded-lg p-8 text-center">
+                    <h2 class="serif text-3xl font-bold mb-4">Ready for an Adventure?</h2>
+                    <p class="text-slate-300 mb-6">Enhance your journey with one of our carefully curated excursions</p>
+                    <button onclick="showPage('booking')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition">
+                        Book an Excursion
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="page-contact" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Contact Us</h1>
+                    <p class="text-2xl text-amber-400 font-light">Have a question or ready to plan your next trip?</p>
+                    <p class="text-slate-400">Speak with a travel specialist today or send us a message below</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
+                        <div class="text-4xl mb-4">👥</div>
+                        <h3 class="serif text-xl font-bold mb-2">Travel Specialists</h3>
+                        <p class="text-slate-400">Hevara Travel, United Kingdom</p>
+                    </div>
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
+                        <div class="text-4xl mb-4">⏰</div>
+                        <h3 class="serif text-xl font-bold mb-2">Travel Support</h3>
+                        <p class="text-slate-400">Available 24/7</p>
+                    </div>
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
+                        <div class="text-4xl mb-4">📱</div>
+                        <h3 class="serif text-xl font-bold mb-2">Get In Touch</h3>
+                        <p class="text-slate-300 font-semibold">+44 7741 326 6960</p>
+                        <p class="text-slate-300">hello@hevaratravel.co.uk</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 mb-16">
+                    <h2 class="serif text-2xl font-bold mb-6">Send us a Message</h2>
+                    <form onsubmit="handleContactForm(event)" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name" required class="bg-slate-700 border border-slate-600 rounded px-4 py-3 text-slate-300 placeholder-slate-500 focus:border-amber-400 focus:outline-none" />
+                            <input type="email" placeholder="Your Email" required class="bg-slate-700 border border-slate-600 rounded px-4 py-3 text-slate-300 placeholder-slate-500 focus:border-amber-400 focus:outline-none" />
+                        </div>
+                        <input type="text" placeholder="Subject" required class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-slate-300 placeholder-slate-500 focus:border-amber-400 focus:outline-none" />
+                        <textarea placeholder="Your Message" rows="6" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-3 text-slate-300 placeholder-slate-500 focus:border-amber-400 focus:outline-none"></textarea>
+                        <button type="submit" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="serif text-3xl font-bold mb-6">Follow Us</h2>
+                    <div class="flex gap-6">
+                        <a href="#" class="bg-slate-800 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 px-6 py-3 rounded transition">Instagram</a>
+                        <a href="#" class="bg-slate-800 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 px-6 py-3 rounded transition">Facebook</a>
+                        <a href="#" class="bg-slate-800 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 px-6 py-3 rounded transition">Twitter</a>
+                        <a href="#" class="bg-slate-800 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 px-6 py-3 rounded transition">YouTube</a>
+                    </div>
+                </div>
+
+                <div class="bg-amber-400/20 border border-amber-400/50 rounded-lg p-8 text-center">
+                    <h2 class="serif text-2xl font-bold mb-4">Or Book Your Journey Directly</h2>
+                    <button onclick="showPage('booking')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition">
+                        Book Now
+                    </button>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -1202,7 +1483,9 @@
                     <h4 class="font-semibold mb-4">Explore</h4>
                     <ul class="space-y-2 text-sm text-slate-400 font-light">
                         <li><a href="#" onclick="showPage('home')" class="hover:text-amber-400">Home</a></li>
-                        <li><a href="#" onclick="showPage('destinations')" class="hover:text-amber-400">Destinations</a></li>
+                        <li><a href="#" onclick="showPage('travel-deals')" class="hover:text-amber-400">Travel Deals</a></li>
+                        <li><a href="#" onclick="showPage('excursions')" class="hover:text-amber-400">Excursions</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="hover:text-amber-400">Contact</a></li>
                         <li><a href="#" onclick="showPage('booking')" class="hover:text-amber-400">Book</a></li>
                     </ul>
                 </div>
@@ -1246,6 +1529,12 @@
         function handleBooking(e) {
             e.preventDefault();
             alert('Thank you for your booking request! Our travel specialists will contact you shortly.');
+        }
+
+        // Contact form
+        function handleContactForm(e) {
+            e.preventDefault();
+            alert('Thank you for your message! Our team will get back to you within 24 hours.');
         }
     </script>
 </body>
