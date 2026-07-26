@@ -109,20 +109,20 @@
                         </div>
 
                         <!-- Maldives -->
-                        <div class="cursor-pointer group" onclick="alert('Coming Soon!')">
+                        <div class="cursor-pointer group" onclick="showPage('maldives')">
                             <div class="relative h-80 rounded-lg overflow-hidden mb-4">
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
+                                <img src="https://hevaratravel.co.uk/wp-content/uploads/elementor/thumbs/Vaavu-atoll-scaled-rn6gcovfmyyimsk9yjmvhjkrg1hhctqzpxw8gisxjk.jpg" alt="Maldives" class="absolute inset-0 w-full h-full object-cover" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
                                 <div class="absolute bottom-0 left-0 right-0 p-6">
                                     <h3 class="serif text-3xl font-bold mb-2">Maldives</h3>
                                     <p class="text-sm text-slate-300 font-light">Island paradise & luxury escapes</p>
                                 </div>
                             </div>
-                            <p class="text-amber-400">Coming Soon</p>
+                            <p class="text-amber-400">From £1,599</p>
                         </div>
 
                         <!-- Portugal -->
-                        <div class="cursor-pointer group" onclick="alert('Coming Soon!')">
+                        <div class="cursor-pointer group" onclick="showPage('portugal')">
                             <div class="relative h-80 rounded-lg overflow-hidden mb-4">
                                 <div class="absolute inset-0 bg-gradient-to-br from-orange-600 to-yellow-700"></div>
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
@@ -135,7 +135,7 @@
                         </div>
 
                         <!-- Turkey -->
-                        <div class="cursor-pointer group" onclick="alert('Coming Soon!')">
+                        <div class="cursor-pointer group" onclick="showPage('turkey')">
                             <div class="relative h-80 rounded-lg overflow-hidden mb-4">
                                 <div class="absolute inset-0 bg-gradient-to-br from-red-600 to-orange-600"></div>
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
@@ -148,7 +148,7 @@
                         </div>
 
                         <!-- Greece -->
-                        <div class="cursor-pointer group" onclick="alert('Coming Soon!')">
+                        <div class="cursor-pointer group" onclick="showPage('greece')">
                             <div class="relative h-80 rounded-lg overflow-hidden mb-4">
                                 <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700"></div>
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
@@ -456,6 +456,120 @@
                     <p class="text-slate-300 mb-6">Let our travel specialists create your perfect Dubai adventure</p>
                     <button onclick="showPage('booking')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition">
                         Book Your Journey
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- MALDIVES PAGE -->
+        <div id="page-maldives" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Maldives</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-8">Luxury island escapes, crystal clear waters and unforgettable experiences in paradise</p>
+                </div>
+
+                <div class="mb-12">
+                    <img src="https://hevaratravel.co.uk/wp-content/uploads/elementor/thumbs/Vaavu-atoll-scaled-rn6gcovfmyyimsk9yjmvhjkrg1hhctqzpxw8gisxjk.jpg" alt="Maldives" class="w-full h-96 object-cover rounded-lg" />
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="serif text-3xl font-bold mb-6">Why Visit The Maldives?</h2>
+                    <p class="text-slate-300 mb-4">The Maldives is one of the world's most breathtaking luxury destinations, famous for its crystal-clear turquoise waters, overwater villas, white sandy beaches and unforgettable sunsets.</p>
+                    <p class="text-slate-300">Perfect for romantic escapes, honeymoons, family getaways and luxury retreats, the Maldives offers a peaceful paradise where relaxation meets adventure. From private island resorts to world-class snorkelling and fine dining experiences, every moment in the Maldives feels truly extraordinary.</p>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="serif text-3xl font-bold mb-8">Top Atolls</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-800 p-6 rounded-lg">
+                            <h3 class="serif text-2xl font-bold mb-2">Baa Atoll</h3>
+                            <p class="text-slate-400">Famous for marine life & snorkelling</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg">
+                            <h3 class="serif text-2xl font-bold mb-2">Ari Atoll</h3>
+                            <p class="text-slate-400">Perfect for diving & whale shark experiences</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg">
+                            <h3 class="serif text-2xl font-bold mb-2">Vaavu Atoll</h3>
+                            <p class="text-slate-400">Known for crystal lagoons & quieter escapes</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg">
+                            <h3 class="serif text-2xl font-bold mb-2">Male Atoll</h3>
+                            <p class="text-slate-400">Luxury resorts close to the airport</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16 bg-slate-800 border border-slate-700 rounded-lg p-8">
+                    <h2 class="serif text-2xl font-bold mb-6">Quick Travel Essentials</h2>
+                    <div class="grid md:grid-cols-2 gap-4 text-slate-300">
+                        <div><strong>Currency:</strong> Maldivian Rufiyaa (MVR)</div>
+                        <div><strong>Language:</strong> Dhivehi</div>
+                        <div><strong>Time Zone:</strong> GMT+5</div>
+                        <div><strong>Best Time To Visit:</strong> November – April</div>
+                        <div><strong>Flight Time From UK:</strong> Approx. 10–13 hours</div>
+                        <div><strong>Visa:</strong> Free 30-day visa on arrival</div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-400/20 border border-amber-400/50 rounded-lg p-8 text-center">
+                    <h2 class="serif text-3xl font-bold mb-4">Ready for Your Maldives Escape?</h2>
+                    <button onclick="showPage('booking')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition">
+                        Book Your Journey
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- PORTUGAL PAGE (Placeholder - Ready to Fill) -->
+        <div id="page-portugal" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Portugal</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-8">Coming Soon - Golden beaches, charming towns & unforgettable coastal escapes</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
+                    <p class="text-slate-300 mb-6">This page is being prepared. Content from your Portugal destination page will be added here shortly.</p>
+                    <button onclick="showPage('home')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-6 py-2 rounded font-semibold transition">
+                        Back to Home
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- TURKEY PAGE (Placeholder - Ready to Fill) -->
+        <div id="page-turkey" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Turkey</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-8">Coming Soon - Rich culture, history & breathtaking Mediterranean coast</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
+                    <p class="text-slate-300 mb-6">This page is being prepared. Content from your Turkey destination page will be added here shortly.</p>
+                    <button onclick="showPage('home')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-6 py-2 rounded font-semibold transition">
+                        Back to Home
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- GREECE PAGE (Placeholder - Ready to Fill) -->
+        <div id="page-greece" class="destination-page">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <button onclick="showPage('home')" class="text-amber-400 hover:text-amber-300 mb-6">← Back to Home</button>
+                <div class="mb-12">
+                    <h1 class="serif text-5xl font-bold mb-4">Greece</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-8">Coming Soon - Island paradise, ancient ruins & Mediterranean dreams</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-lg p-8 text-center">
+                    <p class="text-slate-300 mb-6">This page is being prepared. Content from your Greece destination page will be added here shortly.</p>
+                    <button onclick="showPage('home')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-6 py-2 rounded font-semibold transition">
+                        Back to Home
                     </button>
                 </div>
             </section>
