@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hevara Travel - Premium Luxury Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; background: #0f172a; color: #cbd5e1; }
+        .serif { font-family: Georgia, serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #fbbf24; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-slate-900/95 backdrop-blur border-b border-slate-800 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="setPage('home')">
+                <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/04/cropped-f2d4ded5-c34a-4cc0-8dfe-32b0760a5ca8-104x104.png" alt="Hevara" class="w-12 h-12 rounded-lg" />
+                <div>
+                    <div class="serif font-bold text-lg">HEVARA</div>
+                    <div class="text-xs text-amber-400">LUXURY TRAVEL</div>
+                </div>
+            </div>
+            <div class="flex gap-8 text-sm font-light">
+                <button onclick="setPage('home')" class="hover:text-amber-400 transition" id="nav-home">Home</button>
+                <button onclick="setPage('destinations')" class="hover:text-amber-400 transition">Destinations</button>
+                <button onclick="setPage('deals')" class="hover:text-amber-400 transition">Deals</button>
+                <button onclick="setPage('booking')" class="hover:text-amber-400 transition">Booking</button>
+            </div>
+            <div class="text-sm text-amber-400 font-light" id="liveTime">00:00:00</div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20" id="content">
+        <!-- HOME PAGE -->
+        <div id="page-home">
+            <!-- Hero -->
+            <section class="relative h-screen bg-gradient-to-b from-slate-900 to-slate-800 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 opacity-20">
+                    <div class="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-transparent"></div>
+                </div>
+                <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+                    <h1 class="serif text-6xl font-bold mb-6">Hevara Travel</h1>
+                    <p class="text-2xl text-amber-400 font-light mb-8">Luxury Experiences, Curated with Care</p>
+                    <button onclick="setPage('booking')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-3 rounded font-semibold transition">
+                        Plan Your Journey
+                    </button>
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section class="bg-slate-800/50 py-12 px-4">
+                <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="serif text-4xl font-bold text-amber-400">15K+</div>
+                        <p class="text-sm text-slate-400 mt-2">Happy Travellers</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="serif text-4xl font-bold text-amber-400">50+</div>
+                        <p class="text-sm text-slate-400 mt-2">Destinations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="serif text-4xl font-bold text-amber-400">4.8★</div>
+                        <p class="text-sm text-slate-400 mt-2">Avg Rating</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="serif text-4xl font-bold text-amber-400">99%</div>
+                        <p class="text-sm text-slate-400 mt-2">Satisfaction</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Widgets -->
+            <section class="bg-slate-900 py-12 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="serif text-3xl font-bold mb-8">Real-Time Travel Information</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                            <p class="text-slate-400 text-sm mb-2">Current Time (London)</p>
+                            <p class="serif text-3xl font-bold text-amber-400" id="widgetTime">00:00:00</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                            <p class="text-slate-400 text-sm mb-2">Weather Conditions</p>
+                            <p class="serif text-3xl font-bold text-amber-400" id="weather">Partly Cloudy</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                            <p class="text-slate-400 text-sm mb-2">London → Bali Flight Time</p>
+                            <p class="serif text-3xl font-bold text-amber-400">24h 30m</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Destinations -->
+            <section class="bg-slate-800/30 py-16 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="serif text-3xl font-bold mb-12">Featured Destinations</h2>
+                    <div class="grid md:grid-cols-3 gap-6" id="featuredDests"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- DESTINATIONS PAGE -->
+        <div id="page-destinations" class="hidden">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <h1 class="serif text-4xl font-bold mb-12">Explore Destinations</h1>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="allDests"></div>
+            </section>
+        </div>
+
+        <!-- DEALS PAGE -->
+        <div id="page-deals" class="hidden">
+            <section class="max-w-7xl mx-auto px-4 py-12">
+                <h1 class="serif text-4xl font-bold mb-8">Travel Deals</h1>
+                <div class="flex gap-4 mb-12">
+                    <button onclick="filterDeals('all')" class="px-6 py-2 rounded bg-amber-400 text-slate-900 transition" id="btn-all">All Budgets</button>
+                    <button onclick="filterDeals('budget')" class="px-6 py-2 rounded bg-slate-800 hover:bg-slate-700 transition" id="btn-budget">Budget</button>
+                    <button onclick="filterDeals('mid')" class="px-6 py-2 rounded bg-slate-800 hover:bg-slate-700 transition" id="btn-mid">Mid-Range</button>
+                    <button onclick="filterDeals('luxury')" class="px-6 py-2 rounded bg-slate-800 hover:bg-slate-700 transition" id="btn-luxury">Luxury</button>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="dealsList"></div>
+            </section>
+        </div>
+
+        <!-- BOOKING PAGE -->
+        <div id="page-booking" class="hidden">
+            <section class="max-w-2xl mx-auto px-4 py-12">
+                <h1 class="serif text-4xl font-bold mb-8">Book Your Journey</h1>
+                <div class="bg-slate-800 p-8 rounded-lg border border-slate-700">
+                    <form onsubmit="handleBooking(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-light mb-2">Destination</label>
+                            <select class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300">
+                                <option>Bali</option>
+                                <option>Dubai</option>
+                                <option>Santorini</option>
+                                <option>Maldives</option>
+                                <option>Thailand</option>
+                                <option>Italy</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-light mb-2">Check-In</label>
+                                <input type="date" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-light mb-2">Check-Out</label>
+                                <input type="date" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-light mb-2">Number of Guests</label>
+                            <input type="number" min="1" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-light mb-2">Name</label>
+                            <input type="text" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-light mb-2">Email</label>
+                            <input type="email" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-light mb-2">Phone</label>
+                            <input type="tel" class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-slate-300" />
+                        </div>
+                        <button type="submit" class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 py-3 rounded font-semibold transition">
+                            Request Booking
+                        </button>
+                    </form>
+                    <div class="mt-8 pt-8 border-t border-slate-700">
+                        <p class="text-sm text-slate-400 mb-4">Or contact us directly:</p>
+                        <div class="space-y-2">
+                            <p>📞 +44 7741 326960</p>
+                            <p>📧 info@hevaratravel.com</p>
+                            <p>💬 WhatsApp: +447741326960</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="https://hevaratravel.co.uk/wp-content/uploads/2026/04/cropped-f2d4ded5-c34a-4cc0-8dfe-32b0760a5ca8-104x104.png" alt="Hevara" class="w-10 h-10 rounded" />
+                        <span class="serif text-lg">HEVARA</span>
+                    </div>
+                    <p class="text-slate-400 font-light text-sm">Luxury travel experiences, curated with care.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <li><a href="#" class="hover:text-amber-400">Destinations</a></li>
+                        <li><a href="#" class="hover:text-amber-400">Travel Deals</a></li>
+                        <li><a href="#" class="hover:text-amber-400">Book Journey</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <li><a href="#" class="hover:text-amber-400">About</a></li>
+                        <li><a href="#" class="hover:text-amber-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-amber-400">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <li><a href="#" class="hover:text-amber-400">Instagram</a></li>
+                        <li><a href="#" class="hover:text-amber-400">Facebook</a></li>
+                        <li><a href="#" class="hover:text-amber-400">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-6 mb-12">
+                <p class="text-sm font-light mb-4">
+                    Hevara Travel is an independent travel agent trading on behalf of InteleTravel Ltd, a Member of ABTA. Many of the holidays and travel services we sell are financially protected.
+                </p>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-sm text-slate-400">
+                <p>© 2026 Hevara Travel. All rights reserved. | Premium Luxury Travel Experiences</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const destinations = [
+            { id: 'bali', name: 'Bali', tagline: 'Tropical Paradise Awaits', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/Bali-1-1024x683.png', price: '£899', rating: 4.8 },
+            { id: 'dubai', name: 'Dubai', tagline: 'Modern Luxury Redefined', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/Dub-1-1024x683.png', price: '£1,299', rating: 4.7 },
+            { id: 'santorini', name: 'Santorini', tagline: 'Romance in Every Sunset', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/Santor-1-1024x683.png', price: '£1,199', rating: 4.9 },
+            { id: 'maldives', name: 'Maldives', tagline: 'Luxury Island Escape', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/maldives-turquoise-lagoon.jpg-scaled.jpg', price: '£1,599', rating: 5.0 },
+            { id: 'thailand', name: 'Thailand', tagline: 'Adventure & Culture', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/de39e542-21a3-4f7f-b4ea-641bdcfe6f33-1024x683.png', price: '£649', rating: 4.6 },
+            { id: 'italy', name: 'Italy', tagline: 'Art, Culture & Cuisine', image: 'https://hevaratravel.co.uk/wp-content/uploads/elementor/thumbs/italy-travel-destination-scaled-rmoqhbyby07e0b9cr66czebokn57l4h09rht4fpo68.jpg', price: '£899', rating: 4.8 }
+        ];
+
+        const deals = [
+            { title: 'Bali Luxury', price: 899, budget: 'luxury', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/Bali-2-1024x683.png' },
+            { title: 'Dubai City', price: 1299, budget: 'luxury', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/Dubai-2-1024x682.png' },
+            { title: 'Santorini', price: 1199, budget: 'luxury', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/Santa-2-1024x683.png' },
+            { title: 'Thailand Budget', price: 649, budget: 'budget', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/de39e542-21a3-4f7f-b4ea-641bdcfe6f33-1024x683.png' },
+            { title: 'Maldives', price: 1599, budget: 'luxury', image: 'https://hevaratravel.co.uk/wp-content/uploads/2026/04/maldives-luxury-overwater-villas-aerial-e1777146457263.jpg' },
+            { title: 'Italy Mid-Range', price: 899, budget: 'mid', image: 'https://hevaratravel.co.uk/wp-content/uploads/elementor/thumbs/italy-travel-destination-scaled-rmoqhbyby07e0b9cr66czebokn57l4h09rht4fpo68.jpg' }
+        ];
+
+        let currentFilter = 'all';
+
+        function setPage(page) {
+            document.querySelectorAll('[id^="page-"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById('page-' + page).classList.remove('hidden');
+            
+            if (page === 'destinations') renderDestinations();
+            if (page === 'deals') renderDeals();
+        }
+
+        function renderDestinations() {
+            const html = destinations.map(d => `
+                <div class="cursor-pointer">
+                    <div class="relative h-96 rounded-lg overflow-hidden mb-6">
+                        <img src="${d.image}" alt="${d.name}" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900"></div>
+                        <div class="absolute top-4 right-4 bg-slate-900/80 px-3 py-1 rounded text-amber-400">${d.rating}★</div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="serif text-3xl font-bold mb-2">${d.name}</h3>
+                            <p class="text-slate-300">${d.tagline}</p>
+                        </div>
+                    </div>
+                    <p class="text-amber-400">From ${d.price}</p>
+                </div>
+            `).join('');
+            document.getElementById('allDests').innerHTML = html;
+        }
+
+        function renderDeals() {
+            const filtered = currentFilter === 'all' ? deals : deals.filter(d => d.budget === currentFilter);
+            const html = filtered.map(d => `
+                <div class="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden">
+                    <img src="${d.image}" alt="${d.title}" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="serif text-xl font-bold mb-4">${d.title}</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="serif text-2xl text-amber-400">£${d.price}</span>
+                            <button class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-4 py-2 rounded text-sm font-semibold">Book</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('dealsList').innerHTML = html;
+        }
+
+        function filterDeals(type) {
+            currentFilter = type;
+            document.querySelectorAll('[id^="btn-"]').forEach(b => b.classList.add('bg-slate-800', 'hover:bg-slate-700'));
+            document.querySelectorAll('[id^="btn-"]').forEach(b => b.classList.remove('bg-amber-400', 'text-slate-900'));
+            document.getElementById('btn-' + type).classList.add('bg-amber-400', 'text-slate-900');
+            document.getElementById('btn-' + type).classList.remove('bg-slate-800', 'hover:bg-slate-700');
+            renderDeals();
+        }
+
+        function renderFeaturedDestinations() {
+            const html = destinations.slice(0, 3).map(d => `
+                <div class="cursor-pointer">
+                    <div class="relative h-80 rounded-lg overflow-hidden mb-4">
+                        <img src="${d.image}" alt="${d.name}" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="serif text-3xl mb-2">${d.name}</h3>
+                            <p class="text-sm text-slate-300">${d.tagline}</p>
+                        </div>
+                    </div>
+                    <p class="text-amber-400">From ${d.price}</p>
+                </div>
+            `).join('');
+            document.getElementById('featuredDests').innerHTML = html;
+        }
+
+        function handleBooking(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! We will contact you shortly.');
+        }
+
+        // Update time every second
+        setInterval(() => {
+            const now = new Date().toLocaleTimeString();
+            document.getElementById('liveTime').textContent = now;
+            document.getElementById('widgetTime').textContent = now;
+        }, 1000);
+
+        // Update weather every 10 seconds
+        setInterval(() => {
+            const weathers = ['Sunny', 'Partly Cloudy', 'Cloudy', 'Light Rain'];
+            document.getElementById('weather').textContent = weathers[Math.floor(Math.random() * weathers.length)];
+        }, 10000);
+
+        // Initialize
+        renderFeaturedDestinations();
+    </script>
+</body>
+</html>
