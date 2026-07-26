@@ -838,3 +838,4 @@ export default function HevaraPremium() {
     </div>
   );
 }
+export default HevaraPremium
